@@ -18,6 +18,7 @@ public class App extends Application {
   private Scene laundryRequest;
   private Scene medicalEquipmentRequest;
   private Scene mealRequest;
+  private Scene mainPage;
 
   // Methods to change the scene to the corresponding Request
   public void setSceneToRequestMenu() {
@@ -26,6 +27,10 @@ public class App extends Application {
 
   public void setSceneToSecurityServicesRequest() {
     primaryStage.setScene(securityServicesRequest);
+  }
+
+  public void setSceneToMainPage() {
+    primaryStage.setScene(mainPage);
   }
 
   public void setSceneToFloralRequest() {
@@ -93,6 +98,9 @@ public class App extends Application {
             FXMLLoader.load(
                 Objects.requireNonNull(
                     App.class.getResource("views/medicalEquipmentRequest.fxml"))));
+    mainPage =
+        new Scene(
+            FXMLLoader.load(Objects.requireNonNull(App.class.getResource("views/mainPage.fxml"))));
   }
 
   @Override
