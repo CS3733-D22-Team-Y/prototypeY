@@ -9,14 +9,18 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 
 public class medicalEquipmentRequestController {
-  private Scene requestMenu =
-      new Scene(
-          FXMLLoader.load(Objects.requireNonNull(App.class.getResource("views/requestMenu.fxml"))));
+  private Scene requestMenu = null;
 
   public medicalEquipmentRequestController() throws IOException {}
 
   @FXML
   void backToRequestMenu(ActionEvent event) throws IOException {
+    if (requestMenu == null) {
+      requestMenu =
+          new Scene(
+              FXMLLoader.load(
+                  Objects.requireNonNull(App.class.getResource("views/requestMenu.fxml"))));
+    }
     App.getInstance().setScene(requestMenu); // Returns to request menu
   }
 }

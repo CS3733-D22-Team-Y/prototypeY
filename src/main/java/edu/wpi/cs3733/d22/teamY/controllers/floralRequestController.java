@@ -19,14 +19,18 @@ public class floralRequestController {
   @FXML private TextField floralPatientName;
   @FXML private TextArea floralAdditionalNotes;
 
-  private Scene requestMenu =
-      new Scene(
-          FXMLLoader.load(Objects.requireNonNull(App.class.getResource("views/requestMenu.fxml"))));
+  private Scene requestMenu = null;
 
   public floralRequestController() throws IOException {}
 
   @FXML
   void backToRequestMenu(ActionEvent event) throws IOException {
+    if (requestMenu == null) {
+      requestMenu =
+          new Scene(
+              FXMLLoader.load(
+                  Objects.requireNonNull(App.class.getResource("views/requestMenu.fxml"))));
+    }
     App.getInstance().setScene(requestMenu); // Returns to request menu
   }
 

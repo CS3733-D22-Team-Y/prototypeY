@@ -16,7 +16,6 @@ public class securityServicesRequestController {
 
   @FXML
   void backToRequestMenu(ActionEvent event) throws IOException {
-
     if (requestMenu == null) {
       requestMenu =
           new Scene(
