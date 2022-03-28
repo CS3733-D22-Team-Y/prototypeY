@@ -36,21 +36,6 @@ public class requestMenuController {
   }
 
   @FXML
-  void religousRequests(ActionEvent event) throws IOException {
-    App.getInstance().setSceneToSecurityServicesRequest();
-  }
-
-  @FXML
-  void patientTransport(ActionEvent event) throws IOException {
-    App.getInstance().setSceneToSecurityServicesRequest();
-  }
-
-  @FXML
-  void maintenanceRequests(ActionEvent event) throws IOException {
-    App.getInstance().setSceneToSecurityServicesRequest();
-  }
-
-  @FXML
   void activeRequests(ActionEvent event) throws IOException {
     App.getInstance().setSceneToActiveRequests();
   }
