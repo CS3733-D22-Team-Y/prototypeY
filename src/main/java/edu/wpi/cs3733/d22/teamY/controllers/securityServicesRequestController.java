@@ -28,7 +28,7 @@ public class securityServicesRequestController {
     App.getInstance().setSceneToRequestMenu(); // Returns to request menu
   }
 
-  // Reset button functionality
+  //  Reset button functionality
   @FXML
   void resetAllFields() {
     // Text input
