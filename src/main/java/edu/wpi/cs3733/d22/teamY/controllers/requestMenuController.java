@@ -27,26 +27,50 @@ public class requestMenuController {
 
   @FXML
   void medicalEquipment() throws IOException {
-    App.getInstance().setSceneToMedicalEquipmentRequest();
+    Scene medicalRequest =
+        new Scene(
+            FXMLLoader.load(
+                Objects.requireNonNull(
+                    App.class.getResource("views/medicalEquipmentRequest.fxml"))));
+
+    App.getInstance().setScene(medicalRequest);
   }
 
   @FXML
   void floralDelivery() throws IOException {
-    App.getInstance().setSceneToFloralRequest();
+    Scene floralRequest =
+        new Scene(
+            FXMLLoader.load(
+                Objects.requireNonNull(App.class.getResource("views/floralRequest.fxml"))));
+
+    App.getInstance().setScene(floralRequest);
   }
 
   @FXML
   void laundryServices() throws IOException {
-    App.getInstance().setSceneToLaundryRequest();
+    Scene laundryRequest =
+        new Scene(
+            FXMLLoader.load(
+                Objects.requireNonNull(App.class.getResource("views/laundryRequest.fxml"))));
+
+    App.getInstance().setScene(laundryRequest);
   }
 
   @FXML
   void mealDelivery() throws IOException {
-    App.getInstance().setSceneToMealRequest();
+    Scene mealRequest =
+        new Scene(
+            FXMLLoader.load(
+                Objects.requireNonNull(App.class.getResource("views/mealRequest.fxml"))));
+    App.getInstance().setScene(mealRequest);
   }
 
   @FXML
   void activeRequests() throws IOException {
-    App.getInstance().setSceneToActiveRequests();
+    Scene activeRequests =
+        new Scene(
+            FXMLLoader.load(
+                Objects.requireNonNull(App.class.getResource("views/activeRequests.fxml"))));
+    App.getInstance().setScene(activeRequests);
   }
 }
