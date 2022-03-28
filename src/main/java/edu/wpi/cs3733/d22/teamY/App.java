@@ -20,6 +20,10 @@ public class App extends Application {
   private Scene mealRequest;
   private Scene activeRequests;
 
+  public void setScene(Scene scene) {
+    primaryStage.setScene(scene);
+  }
+
   // Methods to change the scene to the corresponding Request
   public void setSceneToRequestMenu() {
     primaryStage.setScene(requestMenu);
