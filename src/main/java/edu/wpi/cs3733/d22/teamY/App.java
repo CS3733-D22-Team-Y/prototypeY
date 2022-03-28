@@ -13,7 +13,6 @@ import lombok.extern.slf4j.Slf4j;
 public class App extends Application {
   private Stage primaryStage;
   private Scene securityServicesRequest;
-  private Scene requestMenu;
   private Scene floralRequest;
   private Scene laundryRequest;
   private Scene medicalEquipmentRequest;
@@ -25,10 +24,6 @@ public class App extends Application {
   }
 
   // Methods to change the scene to the corresponding Request
-  public void setSceneToRequestMenu() {
-    primaryStage.setScene(requestMenu);
-  }
-
   public void setSceneToSecurityServicesRequest() {
     primaryStage.setScene(securityServicesRequest);
   }
@@ -76,10 +71,6 @@ public class App extends Application {
     primaryStage.show();
 
     // Creates scenes for the corresponding fxml files
-    requestMenu =
-        new Scene(
-            FXMLLoader.load(
-                Objects.requireNonNull(App.class.getResource("views/requestMenu.fxml"))));
     securityServicesRequest =
         new Scene(
             FXMLLoader.load(
