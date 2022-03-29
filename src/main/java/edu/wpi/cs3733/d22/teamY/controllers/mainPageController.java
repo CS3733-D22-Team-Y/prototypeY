@@ -9,31 +9,36 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 
 public class mainPageController {
+  Scene welcomePage = null;
+  Scene requestMenu = null;
+  Scene activeRequests = null;
+
   @FXML
-  void backToWelcomePage(ActionEvent event) throws IOException {
-    // Setting it to request menu for now but will make it to welcome page
-    Scene s =
+  void welcomePage() throws IOException {
+    welcomePage =
         new Scene(
             FXMLLoader.load(
-                Objects.requireNonNull(getClass().getResource("views/requestMenu.fxml"))));
-    App.getInstance().setScene(s);
+                Objects.requireNonNull(App.class.getResource("views/welcomePage.fxml"))));
+    App.getInstance().setScene(welcomePage);
   }
 
-  void createServiceRequest(ActionEvent event) throws IOException {
+  @FXML
+  void requestMenu() throws IOException {
     // Sets scene to service request page
-    Scene s =
+    requestMenu =
         new Scene(
             FXMLLoader.load(
                 Objects.requireNonNull(App.class.getResource("views/requestMenu.fxml"))));
-    App.getInstance().setScene(s);
+    App.getInstance().setScene(requestMenu);
   }
 
-  void viewServiceRequest(ActionEvent event) throws IOException {
+  @FXML
+  void activeRequests() throws IOException {
     // Sets scene to view service request
-    Scene s =
+    activeRequests =
         new Scene(
             FXMLLoader.load(
                 Objects.requireNonNull(App.class.getResource("views/activeRequests.fxml"))));
-    App.getInstance().setScene(s);
+    App.getInstance().setScene(activeRequests);
   }
 }
