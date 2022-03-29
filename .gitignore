@@ -8,6 +8,6 @@ bin/
 *.log
 
 #Ignore DB
-/LocationDB
+LocationDB/
 #Mac Specific
 .DS_Store
