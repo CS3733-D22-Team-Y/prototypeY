@@ -74,13 +74,4 @@ public class requestMenuController {
                 Objects.requireNonNull(App.class.getResource("views/mealRequest.fxml"))));
     App.getInstance().setScene(mealRequest);
   }
-
-  @FXML
-  void activeRequests() throws IOException {
-    Scene activeRequests =
-        new Scene(
-            FXMLLoader.load(
-                Objects.requireNonNull(App.class.getResource("views/activeRequests.fxml"))));
-    App.getInstance().setScene(activeRequests);
-  }
 }
