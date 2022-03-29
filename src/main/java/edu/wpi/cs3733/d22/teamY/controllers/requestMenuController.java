@@ -14,6 +14,16 @@ public class requestMenuController {
 
   // All below methods call corresponding scene setting methods in an instance of app
   // These are called by the corresponding button in the Request Menu (requestMenu.fxml)
+
+  @FXML
+  void mainMenu() throws IOException {
+    Scene securityRequest =
+        new Scene(
+            FXMLLoader.load(Objects.requireNonNull(App.class.getResource("views/mainPage.fxml"))));
+
+    App.getInstance().setScene(securityRequest);
+  }
+
   @FXML
   void securityServices() throws IOException {
     Scene securityRequest =
