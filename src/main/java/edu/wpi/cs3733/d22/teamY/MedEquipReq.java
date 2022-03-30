@@ -17,6 +17,12 @@ public class MedEquipReq {
         return targetLocID;
     }
 
+    public void setRequestNum(int requestNum){ this.requestNum = requestNum; }
+
+    public void setEqiupID(String equipID){ this.equipID = equipID; }
+
+    public void setTargetLocID(String targetLocID){ this.targetLocID = targetLocID; }
+
     public MedEquipReq(
             int requestNum, String equipID, String targetLocID) {
         this.requestNum = requestNum;
