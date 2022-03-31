@@ -53,4 +53,16 @@ public class sideBarController extends AbsGlobalControllerFuncs {
   void loadLab() throws IOException {
     loadScene("views/requestTypes/labRequest.fxml");
   }
+  /*
+   @FXML
+   void loadLocationTable() throws IOException {
+     loadScene("views/locTablePage.fxml");
+   }
+
+   @FXML
+   void loadEquipmentTable() throws IOException {
+     loadScene("views/medEquipReqTablePage.fxml");
+   }
+
+  */
 }

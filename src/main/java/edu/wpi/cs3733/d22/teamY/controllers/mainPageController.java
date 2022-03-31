@@ -58,7 +58,7 @@ public class mainPageController {
       table =
           new Scene(
               FXMLLoader.load(
-                 Objects.requireNonNull(App.class.getResource("views/locTablePage.fxml"))));
+                  Objects.requireNonNull(App.class.getResource("views/locTablePage.fxml"))));
     }
     App.getInstance().setScene(table);
   }
