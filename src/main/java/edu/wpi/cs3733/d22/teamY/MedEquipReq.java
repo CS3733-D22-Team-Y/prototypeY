@@ -1,42 +1,56 @@
 package edu.wpi.cs3733.d22.teamY;
 
 public class MedEquipReq {
-    private int requestNum;
-    private String equipID;
-    private String targetLocID;
 
-    public int getRequestNum() {
-        return requestNum;
-    }
+  private String requestNum;
+  private String equipID;
+  private String targetLocID;
 
-    public String getEquipID() {
-        return equipID;
-    }
+  public String getKey() {
+    return requestNum;
+  }
 
-    public String getTargetLocID() {
-        return targetLocID;
-    }
+  public String getRequestNum() {
+    return requestNum;
+  }
 
-    public void setRequestNum(int requestNum){ this.requestNum = requestNum; }
+  public String getEquipID() {
+    return equipID;
+  }
 
-    public void setEqiupID(String equipID){ this.equipID = equipID; }
+  public String getTargetLocID() {
+    return targetLocID;
+  }
 
-    public void setTargetLocID(String targetLocID){ this.targetLocID = targetLocID; }
+  public void setRequestNum(int requestNum){ this.requestNum = requestNum; }
 
-    public MedEquipReq(
-            int requestNum, String equipID, String targetLocID) {
-        this.requestNum = requestNum;
-        this.equipID = equipID;
-        this.targetLocID = targetLocID;
-    }
+  public void setEqiupID(String equipID){ this.equipID = equipID; }
 
+  public void setTargetLocID(String targetLocID){ this.targetLocID = targetLocID; }
 
+  public MedEquipReq(String requestNum, String equipID, String targetLocID) {
+    this.requestNum = requestNum;
+    this.equipID = equipID;
+    this.targetLocID = targetLocID;
+  }
 
-    public int getID() {
-        return requestNum;
-    }
+  public String getInsertQuery() {
+    return "VALUES("
+        + "'"
+        + this.requestNum
+        + "'"
+        + ", "
+        + "'"
+        + this.equipID
+        + "'"
+        + ", "
+        + "'"
+        + this.targetLocID
+        + "'"
+        + ")";
+  }
 
-    public MedEquipReq getClone() {
-        return new MedEquipReq(requestNum, equipID, targetLocID);
-    }
+  public MedEquipReq getClone() {
+    return new MedEquipReq(requestNum, equipID, targetLocID);
+  }
 }

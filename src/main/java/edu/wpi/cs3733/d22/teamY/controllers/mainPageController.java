@@ -11,6 +11,8 @@ public class mainPageController {
   Scene welcomePage = null;
   Scene requestMenu = null;
   Scene activeRequests = null;
+  Scene viewMap = null;
+  Scene table;
 
   @FXML
   void welcomePage() throws IOException {
@@ -32,12 +34,29 @@ public class mainPageController {
   }
 
   @FXML
-  void activeRequests() throws IOException {
+  void activeRequest() throws IOException {
     // Sets scene to view service request
     activeRequests =
         new Scene(
             FXMLLoader.load(
-                Objects.requireNonNull(App.class.getResource("views/activeRequests.fxml"))));
+                Objects.requireNonNull(App.class.getResource("views/activeServiceRequest.fxml"))));
     App.getInstance().setScene(activeRequests);
+  }
+
+  @FXML
+  void viewMap() throws IOException {
+    // Sets scene to view service request
+    viewMap =
+        new Scene(
+            FXMLLoader.load(Objects.requireNonNull(App.class.getResource("views/mapPage.fxml"))));
+    App.getInstance().setScene(viewMap);
+  }
+
+  @FXML
+  void onTableButton() throws IOException {
+    if (table == null) {
+      table = new Scene(FXMLLoader.load(App.class.getResource("views/tablePage.fxml")));
+    }
+    App.getInstance().setScene(table);
   }
 }
