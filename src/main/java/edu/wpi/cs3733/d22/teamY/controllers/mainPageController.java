@@ -3,6 +3,7 @@ package edu.wpi.cs3733.d22.teamY.controllers;
 import edu.wpi.cs3733.d22.teamY.App;
 import java.io.IOException;
 import java.util.Objects;
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -73,5 +74,10 @@ public class mainPageController {
                       App.class.getResource("views/medEquipReqTablePage.fxml"))));
     }
     App.getInstance().setScene(table);
+  }
+
+  @FXML
+  void killApplication() throws IOException {
+    Platform.exit();
   }
 }

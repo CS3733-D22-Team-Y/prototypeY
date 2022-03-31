@@ -1,6 +1,7 @@
 package edu.wpi.cs3733.d22.teamY.controllers;
 
 import java.io.IOException;
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 
 public class sideBarController extends AbsGlobalControllerFuncs {
@@ -62,5 +63,10 @@ public class sideBarController extends AbsGlobalControllerFuncs {
   @FXML
   void loadMedEquipmentRequests() throws IOException {
     loadScene("views/medEquipReqTablePage.fxml");
+  }
+
+  @FXML
+  void killApplication() throws IOException {
+    Platform.exit();
   }
 }
