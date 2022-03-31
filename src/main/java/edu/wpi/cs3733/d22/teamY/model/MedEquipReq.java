@@ -1,15 +1,15 @@
 package edu.wpi.cs3733.d22.teamY.model;
 
 public class MedEquipReq {
-  private String requestNum;
+  private int requestNum;
   private String equipID;
   private String targetLocID;
 
-  public String getKey() {
+  public int getKey() {
     return requestNum;
   }
 
-  public String getRequestNum() {
+  public int getRequestNum() {
     return requestNum;
   }
 
@@ -21,7 +21,7 @@ public class MedEquipReq {
     return targetLocID;
   }
 
-  public MedEquipReq(String requestNum, String equipID, String targetLocID) {
+  public MedEquipReq(int requestNum, String equipID, String targetLocID) {
     this.requestNum = requestNum;
     this.equipID = equipID;
     this.targetLocID = targetLocID;
