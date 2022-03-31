@@ -91,8 +91,8 @@
          </font>
       </Text>
       <JFXButton layoutX="11.0" layoutY="377.0" prefHeight="25.0" prefWidth="123.0" text="Equipment Hidden Button" textFill="TRANSPARENT" />
-      <JFXButton layoutX="11.0" layoutY="407.0" prefHeight="26.0" prefWidth="154.0" text="Equipment Catalog Hidden Button" textFill="TRANSPARENT" />
-      <JFXButton layoutX="11.0" layoutY="429.0" prefHeight="25.0" prefWidth="106.0" text="Eqiupment Location" textFill="TRANSPARENT" />
+      <JFXButton layoutX="11.0" layoutY="407.0" onAction="#loadMedEquipmentRequests" prefHeight="26.0" prefWidth="154.0" text="Equipment Catalog Hidden Button" textFill="TRANSPARENT" />
+      <JFXButton layoutX="11.0" layoutY="429.0" onAction="#loadLocationTable" prefHeight="25.0" prefWidth="106.0" text="Eqiupment Location" textFill="TRANSPARENT" />
       <Text fill="WHITE" layoutX="34.0" layoutY="604.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Inbox">
          <font>
             <Font name="Microsoft Tai Le Bold" size="14.0" />
