@@ -66,7 +66,7 @@ public class sideBarController extends AbsGlobalControllerFuncs {
   }
 
   @FXML
-  void killApplication() throws IOException {
+  void killApplication() {
     Platform.exit();
   }
 }
