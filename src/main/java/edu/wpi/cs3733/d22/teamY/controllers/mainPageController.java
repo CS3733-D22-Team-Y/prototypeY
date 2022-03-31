@@ -29,7 +29,7 @@ public class mainPageController {
     requestMenu =
         new Scene(
             FXMLLoader.load(
-                Objects.requireNonNull(App.class.getResource("views/medEquipReqTablePage.fxml"))));
+                Objects.requireNonNull(App.class.getResource("views/requestMenu.fxml"))));
     App.getInstance().setScene(requestMenu);
   }
 
@@ -55,7 +55,22 @@ public class mainPageController {
   @FXML
   void onTableButton() throws IOException {
     if (table == null) {
-      table = new Scene(FXMLLoader.load(App.class.getResource("views/tablePage.fxml")));
+      table =
+          new Scene(
+              FXMLLoader.load(
+                  Objects.requireNonNull(App.class.getResource("views/tablePage.fxml"))));
+    }
+    App.getInstance().setScene(table);
+  }
+
+  @FXML
+  void equipmentTable() throws IOException {
+    if (table == null) {
+      table =
+          new Scene(
+              FXMLLoader.load(
+                  Objects.requireNonNull(
+                      App.class.getResource("views/medEquipReqTablePage.fxml"))));
     }
     App.getInstance().setScene(table);
   }
