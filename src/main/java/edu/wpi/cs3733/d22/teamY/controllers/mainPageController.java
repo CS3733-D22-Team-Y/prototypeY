@@ -34,7 +34,7 @@ public class mainPageController {
   }
 
   @FXML
-  void activeRequests() throws IOException {
+  void activeRequest() throws IOException {
     // Sets scene to view service request
     activeRequests =
         new Scene(
@@ -53,9 +53,24 @@ public class mainPageController {
   }
 
   @FXML
-  void onTableButton() throws IOException {
+  void locationTable() throws IOException {
     if (table == null) {
-      table = new Scene(FXMLLoader.load(App.class.getResource("views/tablePage.fxml")));
+      table =
+          new Scene(
+              FXMLLoader.load(
+                 Objects.requireNonNull(App.class.getResource("views/locTablePage.fxml"))));
+    }
+    App.getInstance().setScene(table);
+  }
+
+  @FXML
+  void equipmentTable() throws IOException {
+    if (table == null) {
+      table =
+          new Scene(
+              FXMLLoader.load(
+                  Objects.requireNonNull(
+                      App.class.getResource("views/medEquipReqTablePage.fxml"))));
     }
     App.getInstance().setScene(table);
   }
