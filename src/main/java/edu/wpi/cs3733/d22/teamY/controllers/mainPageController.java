@@ -53,12 +53,12 @@ public class mainPageController {
   }
 
   @FXML
-  void onTableButton() throws IOException {
+  void locationTable() throws IOException {
     if (table == null) {
       table =
           new Scene(
               FXMLLoader.load(
-                  Objects.requireNonNull(App.class.getResource("views/tablePage.fxml"))));
+                 Objects.requireNonNull(App.class.getResource("views/locTablePage.fxml"))));
     }
     App.getInstance().setScene(table);
   }
