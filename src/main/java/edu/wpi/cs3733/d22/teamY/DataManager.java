@@ -170,24 +170,6 @@ public class DataManager {
   }
 
   /**
-   * Adds a list of DBObjects to the database
-   *
-   * @param objects the list of DBObjects to add
-   * @return true if successful with entire list, false otherwise
-   */
-  public static boolean addObjects(DBObject... objects) {
-    boolean ok = true;
-    for (DBObject obj : objects) {
-      if (!add(obj)) // uses the addLocation method to avoid redundancy
-      {
-        ok = false;
-      }
-    }
-
-    return ok;
-  }
-
-  /**
    * Adds a list of database objects to their respective tables
    *
    * @param objects the arraylist of DBObjects to add

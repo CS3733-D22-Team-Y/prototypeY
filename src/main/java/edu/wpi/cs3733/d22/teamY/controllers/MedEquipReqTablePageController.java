@@ -1,7 +1,7 @@
 package edu.wpi.cs3733.d22.teamY.controllers;
 
 import edu.wpi.cs3733.d22.teamY.DataManager;
-import edu.wpi.cs3733.d22.teamY.MedEquipReq;
+import edu.wpi.cs3733.d22.teamY.MedEquipReqDBO;
 import edu.wpi.cs3733.d22.teamY.model.dao.exception.DaoGetException;
 import java.io.IOException;
 import java.util.Collections;
@@ -15,12 +15,12 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.Pane;
 
 public class MedEquipReqTablePageController extends AbsGlobalControllerFuncs {
-  @FXML private TableView<MedEquipReq> medEquipReqTableView;
+  @FXML private TableView<MedEquipReqDBO> medEquipReqTableView;
 
   @FXML Pane sidebarPane;
 
   public void initialize() {
-    List<MedEquipReq> medEquipReqs;
+    List<MedEquipReqDBO> medEquipReqs;
     try {
       medEquipReqs = DataManager.getMedEquipReqDao().getAllMedEquipReq();
     } catch (DaoGetException e) {
@@ -28,11 +28,11 @@ public class MedEquipReqTablePageController extends AbsGlobalControllerFuncs {
       medEquipReqs = Collections.emptyList();
     }
 
-    ObservableList<MedEquipReq> locationsObservable = FXCollections.observableList(medEquipReqs);
+    ObservableList<MedEquipReqDBO> locationsObservable = FXCollections.observableList(medEquipReqs);
 
-    TableColumn<MedEquipReq, Integer> requestNum = new TableColumn<>("Request Number");
-    TableColumn<MedEquipReq, Integer> equipID = new TableColumn<>("Equipment ID");
-    TableColumn<MedEquipReq, Integer> targetNodeID = new TableColumn<>("Target Node ID");
+    TableColumn<MedEquipReqDBO, Integer> requestNum = new TableColumn<>("Request Number");
+    TableColumn<MedEquipReqDBO, Integer> equipID = new TableColumn<>("Equipment ID");
+    TableColumn<MedEquipReqDBO, Integer> targetNodeID = new TableColumn<>("Target Node ID");
 
     requestNum.setCellValueFactory(new PropertyValueFactory<>("requestNum"));
     equipID.setCellValueFactory(new PropertyValueFactory<>("equipID"));

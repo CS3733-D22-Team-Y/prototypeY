@@ -1,6 +1,6 @@
 package edu.wpi.cs3733.d22.teamY.model.dao.impl;
 
-import edu.wpi.cs3733.d22.teamY.MedEquipReq;
+import edu.wpi.cs3733.d22.teamY.MedEquipReqDBO;
 import edu.wpi.cs3733.d22.teamY.model.dao.MedEquipReqDao;
 import edu.wpi.cs3733.d22.teamY.model.dao.exception.DaoAddException;
 import edu.wpi.cs3733.d22.teamY.model.dao.exception.DaoDeleteException;
@@ -18,14 +18,14 @@ public class MedEquipReqDaoImpl implements MedEquipReqDao {
   }
 
   @Override
-  public List<MedEquipReq> getAllMedEquipReq() throws DaoGetException {
-    List<MedEquipReq> medEquipReqs = new ArrayList<>();
+  public List<MedEquipReqDBO> getAllMedEquipReq() throws DaoGetException {
+    List<MedEquipReqDBO> medEquipReqs = new ArrayList<>();
     try {
       Statement s = conn.createStatement();
       ResultSet rs = s.executeQuery("SELECT * FROM MEDEQUIPREQUEST");
       while (rs.next()) {
         medEquipReqs.add(
-            new MedEquipReq(
+            new MedEquipReqDBO(
                 Integer.toString(
                     rs.getInt("REQUESTNUM")), // TODO fix type mismatch in class and table?
                 rs.getString("EQUIPID"),
@@ -38,14 +38,14 @@ public class MedEquipReqDaoImpl implements MedEquipReqDao {
   }
 
   @Override
-  public MedEquipReq getMedEquipReq(String requestNum) throws DaoGetException {
+  public MedEquipReqDBO getMedEquipReq(String requestNum) throws DaoGetException {
     try {
       PreparedStatement s =
           conn.prepareStatement("SELECT * FROM MEDEQUIPREQUEST WHERE REQUESTNUM = ?");
       s.setInt(1, Integer.parseInt(requestNum));
       ResultSet rs = s.executeQuery();
       if (rs.next()) {
-        return new MedEquipReq(
+        return new MedEquipReqDBO(
             Integer.toString(rs.getInt("REQUESTNUM")), // TODO fix type mismatch in class and table?
             rs.getString("EQUIPID"),
             rs.getString("TARGETNODEID"));
@@ -60,7 +60,7 @@ public class MedEquipReqDaoImpl implements MedEquipReqDao {
   }
 
   @Override
-  public void addMedEquipReq(MedEquipReq mreq) throws DaoAddException {
+  public void addMedEquipReq(MedEquipReqDBO mreq) throws DaoAddException {
     try {
       PreparedStatement s =
           conn.prepareStatement(
@@ -75,7 +75,7 @@ public class MedEquipReqDaoImpl implements MedEquipReqDao {
   }
 
   @Override
-  public void updateMedEquipReq(MedEquipReq mreq) throws DaoUpdateException {
+  public void updateMedEquipReq(MedEquipReqDBO mreq) throws DaoUpdateException {
     try {
       PreparedStatement s =
           conn.prepareStatement(
@@ -90,7 +90,7 @@ public class MedEquipReqDaoImpl implements MedEquipReqDao {
   }
 
   @Override
-  public void deleteMedEquipReq(MedEquipReq mreq) throws DaoDeleteException {
+  public void deleteMedEquipReq(MedEquipReqDBO mreq) throws DaoDeleteException {
     try {
       PreparedStatement s =
           conn.prepareStatement("DELETE FROM MEDEQUIPREQUEST WHERE REQUESTNUM = ?");
